@@ -13,10 +13,7 @@
     },
     "target-dir": "Zend/Loader",
     "require": {
-        "php": ">=5.3.3"
-    },
-    "suggest": {
-        "zendframework/zend-stdlib": "Zend\\Stdlib component"
+        "php": ">=5.3.23"
     },
     "extra": {
         "branch-alias": {

@@ -1,0 +1,21 @@
+{
+"name": "radnan/rdn-console",
+"description": "Zend Framework 2 Symfony Console module",
+"keywords": ["zf2", "zend", "sf2", "symfony", "console"],
+"license": "MIT",
+"authors": [
+{
+"name": "radnan",
+"email": "rafiadnan47@gmail.com"
+}
+],
+"require": {
+"radnan/rdn-factory": "1.*",
+"symfony/console": "2.*"
+},
+"autoload": {
+"psr-0": {
+"RdnConsole\\": "src/"
+}
+}
+}

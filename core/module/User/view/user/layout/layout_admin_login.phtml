@@ -1,0 +1,84 @@
+<?php echo $this->doctype(); ?>
+<html lang="<?php echo $this->placeholder('lang'); ?>">
+  <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    	<?php echo $this->headTitle('Fresh'. $this->translate('Dashboard - Bootstrap Admin', 'admin')); ?>
+    
+    	<!-- Meta -->
+    	
+    
+    	<!-- Le styles -->
+     	<?php echo $this->headLink()->prependStylesheet($this->basePath() . '/_base/css/bootstrap.min.css')
+                     	->prependStylesheet($this->basePath() . '/_base/css/bootstrap-responsive.min.css')
+                     	->prependStylesheet($this->basePath() . '/user/login.css')
+     	?>
+    </head>
+
+<body>
+	
+<div class="navbar navbar-fixed-top">
+	
+	<div class="navbar-inner">
+		
+		<div class="container">
+			
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span> 				
+			</a>
+			
+			<a class="brand" href="./">Adminia Admin</a>
+			
+			<div class="nav-collapse">
+			
+				<ul class="nav pull-right">
+					
+					<li class="">
+						
+						<a href="javascript:;"><i class="icon-chevron-left"></i> Back to Homepage</a>
+					</li>
+				</ul>
+				
+			</div> <!-- /nav-collapse -->
+			
+		</div> <!-- /container -->
+		
+	</div> <!-- /navbar-inner -->
+	
+</div> <!-- /navbar -->
+
+
+<div id="login-container">
+	
+	
+	<div id="login-header">
+		
+		<h3>Login</h3>
+		
+	</div> <!-- /login-header -->
+	
+	<div id="login-content" class="clearfix">
+	
+	
+			
+		</div> <!-- /login-content -->
+		
+		
+		<div id="login-extra">
+			
+			<p>Don't have an account? <a href="javascript:;">Sign Up.</a></p>
+			
+			<p>Remind Password? <a href="forgot_password.html">Retrieve.</a></p>
+			
+		</div> <!-- /login-extra -->
+	
+	</div> <!-- /login-wrapper -->
+
+    
+	<!-- Scripts -->
+	<?php echo $this->headScript()->prependFile($this->basePath() . '/_base/js/bootstrap.min.js')
+								  ->prependFile($this->basePath() . '/_base/js/jquery.min.js');
+	?>
+	</body>
+</html>
