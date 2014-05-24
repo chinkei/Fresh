@@ -8,15 +8,24 @@
         <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
 
         <!-- Le styles -->
-        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/_base/img/favicon.ico'))
-                        ->prependStylesheet($this->basePath() . '/_base/css/bootstrap-responsive.min.css')
-                        ->prependStylesheet($this->basePath() . '/_base/css/style.css')
-                        ->prependStylesheet($this->basePath() . '/_base/css/bootstrap.min.css') ?>
-
-        <!-- Scripts -->
-        <?php echo $this->headScript()->prependFile($this->basePath() . '/_base/js/html5.js', 'text/javascript', array('conditional' => 'lt IE 9',))
-                                      ->prependFile($this->basePath() . '/_base/js/bootstrap.min.js')
-                                      ->prependFile($this->basePath() . '/_base/js/jquery.min.js') ?>
+        <?php 
+        	echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/_base/img/favicon.ico'));
+        	
+        	echo $this->Assets('css', array(
+				'/_base/css/bootstrap.min.css',
+				'/_base/css/style.css',
+				'/_base/css/bootstrap-responsive.min.css'
+			));
+		?>
+		
+		<!-- Scripts -->
+		<?php	
+			echo $this->Assets('js', array(
+				'/_base/js/jquery.min.js',
+				'/_base/js/bootstrap.min.js',
+				'/_base/js/html5.js'
+			));
+        ?>
 
     </head>
     <body>
@@ -44,6 +53,6 @@
                 <p>&copy; <?php echo date('Y') ?> by Chinkei. <?php echo $this->translate('All rights reserved.') ?></p>
             </footer>
         </div> <!-- /container -->
-        <?php echo $this->inlineScript() ?>
+        <?php echo $this->inlineScript(); ?>
     </body>
 </html>

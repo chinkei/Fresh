@@ -6,18 +6,15 @@
  * @see https://github.com/zendframework/ZFTool
  */
 return array(
-    'modules' => array(
-        	'Application',
-    		'User',
-    		'Rbac',
-    		'zenddevelopertools',
-    		//'ProfilerToolbar'
-    ),
     'module_listener_options' => array(
         'module_paths' => array(
             './core/module',
-            './vendor'
+        	'./apps',
         ),
-        'config_glob_paths' => array('./config/autoload/{,*.}{global,local}.php')
-    )
+    ),
+	'service_manager' => array(
+		'factories'    => array(
+			'ServiceListener' => 'Fresh\Mvc\Service\ServiceListenerFactory',
+		),
+	),
 );
