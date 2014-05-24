@@ -2,7 +2,7 @@
 define('REQUEST_MICROTIME', microtime(true));
 
 // 定义代码环境常量
-define('ENVIRONMENT', isset($_SERVER['FRESH_ENV']) ? $_SERVER['FRESH_ENV'] : 'production');
+define('ENVIRONMENT', isset($_SERVER['FRESH_ENV']) ? $_SERVER['FRESH_ENV'] : 'develop');
 
 /**
  * This makes our life easier when dealing with paths. Everything is relative
