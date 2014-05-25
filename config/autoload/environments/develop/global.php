@@ -14,16 +14,9 @@ return array(
     // ...
     'db' => array(
         'driver' => 'Pdo',
-        'dsn' => 'mysql:dbname=Fresh;host=localhost',
+        'dsn' => 'mysql:dbname=demo;host=localhost',
         'driver_options' => array(
             PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
         )
     ),
-	/* Use Db profiler
-    'service_manager' => array(
-        'factories' => array(
-            'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory'
-        )
-    ),
-    */
 );

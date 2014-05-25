@@ -7,15 +7,8 @@
  */
 return \Zend\Stdlib\ArrayUtils::merge(array(
     'modules' => array(
-    	// Core
-    	'Core',
-    	'Backend',
-        'Application',
-    	'User',
-    	'Rbac',
-    	'AsseticBundle',
-    	'BjyProfiler',
     	'ZendDeveloperTools',
+    	'BjyProfiler',
     ),
     'module_listener_options' => array(
         'config_glob_paths' => array(
@@ -23,4 +16,4 @@ return \Zend\Stdlib\ArrayUtils::merge(array(
         	'./config/autoload/environments/develop/{,*.}{global,local}.php'
         )
     ),
-), include __DIR__.'/application.config.php');
+), include __DIR__.'/global.application.config.php');

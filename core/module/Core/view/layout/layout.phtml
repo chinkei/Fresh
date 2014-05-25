@@ -9,21 +9,21 @@
 
         <!-- Le styles -->
         <?php 
-        	echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/demo/img/favicon.ico'));
+        	echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/_base/img/favicon.ico'));
         	
         	echo $this->Assets('css', array(
-				'/demo/css/bootstrap.min.css',
-				'/demo/css/style.css',
-				'/demo/css/bootstrap-responsive.min.css'
+				'/_base/css/bootstrap.min.css',
+				'/_base/css/style.css',
+				'/_base/css/bootstrap-responsive.min.css'
 			));
 		?>
 		
 		<!-- Scripts -->
 		<?php	
 			echo $this->Assets('js', array(
-				'/demo/js/jquery.min.js',
-				'/demo/js/bootstrap.min.js',
-				'/demo/js/html5.js'
+				'/_base/js/jquery.min.js',
+				'/_base/js/bootstrap.min.js',
+				'/_base/js/html5.js'
 			));
         ?>
 

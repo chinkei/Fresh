@@ -1,4 +1,5 @@
 /.settings/*
+*.local.php
 node_modules/*
 composer.lock
 vendor/*

@@ -32,7 +32,7 @@ class BackendNavigation extends  Menu
      * @param bool $escapeLabel     Whether or not to escape the label
      * @return string               HTML string for the given page
      */
-    public function htmlify(AbstractPage $page, $escapeLabel = true)
+    public function htmlify(AbstractPage $page, $escapeLabel = true, $addClassToListItem = false)
     {
         // get label and title for translating
         $label = $page->getLabel();
@@ -58,7 +58,6 @@ class BackendNavigation extends  Menu
         // does page have a href?
         $href = $page->getHref();
         if ($href) {
-
             $element = 'a';
             $attribs['href'] = $href;
             $attribs['target'] = $page->getTarget();
@@ -80,10 +79,4 @@ class BackendNavigation extends  Menu
 
         return $html;
     }
-/*
-    public function title(){
-        return $this->getTitle();
-    }
-*/
-
 }
