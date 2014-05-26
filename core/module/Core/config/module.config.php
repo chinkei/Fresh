@@ -23,4 +23,13 @@ return array(
             __DIR__ . '/../view',
         ),
     ),
+	'doctrine' => array(
+        'eventmanager' => array(
+			'orm_default' => array(
+				'subscribers' => array(
+					'Core\Subscriber\DoctrineTablePrefix'
+				),
+			),
+		),
+	),
 );
