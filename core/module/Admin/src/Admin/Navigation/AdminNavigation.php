@@ -1,14 +1,10 @@
 <?php
-namespace Core\Navigation;
+namespace Admin\Navigation;
 
 use Zend\Navigation\Service\DefaultNavigationFactory;
 
 
-/**
- * Class QuAdminNavigation
- * @package QuAdmin\Navigation
- */
-class BackendNavigation extends DefaultNavigationFactory
+class AdminNavigation extends DefaultNavigationFactory
 {
     /**
      * @var
@@ -20,6 +16,6 @@ class BackendNavigation extends DefaultNavigationFactory
      */
     protected function getName()
     {
-        return 'backend_navigation';
+        return 'admin_navigation';
     }
 }

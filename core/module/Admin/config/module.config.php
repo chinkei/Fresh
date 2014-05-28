@@ -10,8 +10,8 @@
 return array(
     'controllers' => array(
         'invokables' => array(
-            'Backend\Controller\Dashboard' => 'Backend\Controller\DashboardController',
-        	'Backend\Controller\Setting'   => 'Backend\Controller\SettingController'
+            'Admin\Controller\Dashboard' => 'Admin\Controller\DashboardController',
+        	'Admin\Controller\Setting'   => 'Admin\Controller\SettingController'
         ),
     ),
 	/**
@@ -19,17 +19,27 @@ return array(
      */
     'router' => array(
         'routes' => array(
-            'backend_route' => array(
+            'admin_route' => array(
                 'type' => 'Literal',
                 'options' => array(
-                    'route' => '/backend',
+                    'route' => '/admin',
                     'defaults' => array(
-                        'controller'    => 'Backend\Controller\Dashboard',
+                        'controller'    => 'Admin\Controller\Dashboard',
                         'action'        => 'index',
                     ),
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
+                    '_base' => array(
+                        'type'    => 'Literal',
+                        'options' => array(
+                            'route' => '/',
+                            'defaults' => array(
+                                'controller' => 'Admin\Controller\Setting',
+                                'action'     => 'index',
+                            ),
+                        ),
+                    ),
                     'setting_route' => array(
                         'type'    => 'segment',
                         'options' => array(
@@ -40,7 +50,7 @@ return array(
                                 'id_parent' => '[0-9]+',
                             ),
                             'defaults' => array(
-                                'controller'    => 'Backend\Controller\Setting',
+                                'controller'    => 'Admin\Controller\Setting',
                                 'action'        => 'index',
                             ),
                         ),
@@ -58,11 +68,11 @@ return array(
      * Backend Navigation
      */
     'navigation' => array(
-        'backend_navigation' => array(
-            'Backend' => array(
+        'admin_navigation' => array(
+            'Admin' => array(
                 'icon'  => 'icon-cog',
                 'label' => 'Global System',
-                'route' => 'backend_route/setting_route',
+                'route' => 'admin_route/setting_route',
                 'order' => 2,
                 'class' => 'submenu',
                 'pages' => array(
@@ -70,25 +80,25 @@ return array(
                         'order' =>1,
                         'icon'  => '&#xe1e1;',
                         'label' => 'Users',
-                        'route' => 'backend_route/setting_route',
+                        'route' => 'admin_route/setting_route',
                     ),
                     'languages' => array(
                         'order' =>2,
                         'icon'  => '&#xe07e;',
                         'label' => 'Languages',
-                        'route' => 'backend_route/setting_route',
+                        'route' => 'admin_route/setting_route',
                     ),
                     'parameters' => array(
                         'order' =>3,
                         'icon'  => '&#xe141;',
                         'label' => 'Parameters',
-                        'route' => 'backend_route/setting_route',
+                        'route' => 'admin_route/setting_route',
                     ),
                     'translator' => array(
                         'order' =>3,
                         'icon'  => '&#xe12c;',
                         'label' => 'Translator',
-                        'route' => 'backend_route/setting_route',
+                        'route' => 'admin_route/setting_route',
                     ),
                     /*'utilities' => array(
                           'icon'  => '&#xe13c;',
@@ -103,7 +113,7 @@ return array(
                         'order' =>10,
                         'icon'   =>'&#xe13c;',
                         'label' => 'ConfigAdmin',
-                        'route' => 'backend_route/setting_route',
+                        'route' => 'admin_route/setting_route',
 
                     ),
                 ),
@@ -111,31 +121,31 @@ return array(
             'dashboard' => array(
                 'icon'  => 'icon-home',
                 'label' => 'Dashboard',
-                'route' => 'backend_route',
+                'route' => 'admin_route',
                 'order' => 1,
              ),
              'user_profiles' => array(
              	'icon'  => 'icon-user',
              	'label' => 'User & Permissions',
-             	'route' => 'backend_route',
+             	'route' => 'admin_route',
              	'order' => 3,
              ),
              'content' => array(
                 'icon'  => 'icon-file',
                 'label' => 'Content Management',
-                'route' => 'backend_route',
+                'route' => 'admin_route',
                 'order' => 4,
              ),
              'replay' => array(
              	'icon'  => 'icon-pencil',
              	'label' => 'Reply Management',
-             	'route' => 'backend_route',
+             	'route' => 'admin_route',
              	'order' => 5,
              ),
              'app' => array(
              	'icon'  => 'icon-briefcase',
              	'label' => 'App Management',
-             	'route' => 'backend_route',
+             	'route' => 'admin_route',
              	'order' => 6,
              ),
         ),
@@ -147,7 +157,7 @@ return array(
     'FreshConfig' => array(
         // NAMESPACE Layout Module
         'Layout' => array(
-        	'Backend' => 'backend/layout/layout',
+        	'Admin' => 'admin/layout/layout',
         ),
 
         // NAMESPACE Base Path Module
@@ -156,7 +166,7 @@ return array(
 
         // NAMESPACE Redirect login
         'RedirectLogin' => array(
-           'Backend' => true,
+           'Admin' => true,
         ),
     ),
 );

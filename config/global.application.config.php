@@ -14,10 +14,11 @@ return array(
 		'DoctrineDataFixtureModule',
 		
 		// Core Module
-		'Core',
-    	'Backend',
         'Application',
+		'Core',
+    	'Admin',
     	'Rbac',
+		'User',
     ),
     'module_listener_options' => array(
         'module_paths' => array(

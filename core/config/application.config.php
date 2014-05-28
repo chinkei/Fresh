@@ -13,7 +13,8 @@ return array(
         'Group',
         'Space',
         'Article',
-        'Message'
+        'Message',
+        'Admin'
     ),
     'module_listener_options' => array(
         'module_paths' => array(

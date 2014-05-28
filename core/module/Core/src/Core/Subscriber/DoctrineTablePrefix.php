@@ -31,7 +31,13 @@ class DoctrineTablePrefix implements \Doctrine\Common\EventSubscriber
 	{
 		return array('loadClassMetadata');
 	}
-	 
+	
+	/**
+	 * 表前缀处理
+	 * 
+	 * @param LoadClassMetadataEventArgs $args
+	 * @return boolean
+	 */
 	public function loadClassMetadata(LoadClassMetadataEventArgs $args)
 	{
 		$classMetadata = $args->getClassMetadata();
@@ -47,11 +53,12 @@ class DoctrineTablePrefix implements \Doctrine\Common\EventSubscriber
 			$lenPrefix = strlen($this->_prefix);
 			
 			// if 数据库导入到Entity else Entity导入数据库
-			if ( substr($tableName, 0, $lenPrefix) == $this->_prefix ) {
+			if ( $lenPrefix && ( substr($tableName, 0, $lenPrefix) == $this->_prefix ) ) {
 				
 				$tableName = substr($tableName, $lenPrefix);
 				$strHuman  = str_replace(' ', '', ucwords( str_replace('_', ' ', $tableName ) ) );
 				
+				// 处理不加前缀的name和rootEntityName
 				$classMetadata->name = $classMetadata->rootEntityName = $classMetadata->namespace.'\\'.$strHuman;
 				
 			} else {

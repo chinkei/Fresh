@@ -34,30 +34,4 @@ class Module
             ),
         );
     }
-    
-    /**
-     * @return array
-     */
-    public function getServiceConfig()
-    {
-        return array(
-            'factories' => array(
-                'BackendNavigation' => 'Core\Navigation\BackendNavigation',
-            ),
-        );
-    }
-    
-    /**
-     * @return array
-     */
-    public function getViewHelperConfig()
-    {
-        return array(
-            'factories' => array(
-                'backend_navigation' => function($sm) {
-                    return new View\Helper\BackendNavigation($sm->getServiceLocator());
-                },
-            ),
-        );
-    }
 }

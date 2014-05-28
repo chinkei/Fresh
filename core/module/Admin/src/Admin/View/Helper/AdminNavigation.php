@@ -1,10 +1,10 @@
 <?php
-namespace Core\View\Helper;
+namespace Admin\View\Helper;
 
 use Zend\Navigation\Page\AbstractPage;
 use Zend\View\Helper\Navigation\Menu;
 
-class BackendNavigation extends  Menu
+class AdminNavigation extends  Menu
 {
 
     /**
